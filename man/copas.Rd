@@ -140,7 +140,7 @@ copas(x,
   \item{warn}{A number setting the handling of warning messages. It is
     not uncommon for numerical problems to be encountered during
     estimation over the grid of (gamma0, gamma1) values. Usually this
-    does not indicate a serious problem. This option specifies what do
+    does not indicate a serious problem. This option specifies what to
     do with warning messages. \code{warn=-1}: ignore all warnings;
     \code{warn=0} (the default): store warnings till function finishes;
     if there are less than 10, print them, otherwise print a message

@@ -7,6 +7,7 @@ plot.copas <- function(x,
                        level=0.95,
                        orthogonal.line=TRUE,
                        lines=FALSE,
+                       warn=-1,
                        ...){
   
   if (!inherits(x, "copas"))
@@ -14,6 +15,11 @@ plot.copas <- function(x,
   
   if (!is.numeric(which) || any(which < 1) || any(which > 4)) 
     stop("'Argument which' must be in 1:4")
+  
+  
+  oldopt <- options(warn=warn)
+  on.exit(options(oldopt))
+  
   
   TE <- x$TE
   seTE <- x$seTE
@@ -54,7 +60,7 @@ plot.copas <- function(x,
   ## Plot 1: funnel plot
   ##
   if (show[1]){
-    funnel(x=TE, y=seTE, level=0.95, sm=sm, xlab="", ylab="")
+    funnel(x=TE, y=seTE, level=0.95, comb.fixed=TRUE, sm=sm, xlab="", ylab="")
     abline(v=TE.random, lty=1, col="darkgray")
     ##
     mtext(sm, side=1, line=2)
@@ -210,7 +216,7 @@ plot.copas <- function(x,
            xlab="", ylab="", axes=FALSE)
     }
     else{
-      plot(lowess(yvalue~xvalue),
+      plot(loess(yvalue~xvalue),
            type="l",
            xlim=xlim, ylim=c(0,1),
            xlab="", ylab="", axes=FALSE)
