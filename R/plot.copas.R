@@ -17,8 +17,9 @@ plot.copas <- function(x,
     stop("'Argument which' must be in 1:4")
   
   
-  oldopt <- options(warn=warn)
-  on.exit(options(oldopt))
+  oldwarn <- options()$warn
+  on.exit(options(warn=oldwarn))
+  options(warn=warn)
   
   
   TE <- x$TE
@@ -50,7 +51,7 @@ plot.copas <- function(x,
                                        mar=c(4.0,4.1,1.5,0.5),
                                        pty="s")
   ##
-  on.exit(par(oldpar))
+  on.exit(par(oldpar), add=TRUE)
   
   
   if (sm == "RR" | sm == "OR" | sm == "HR")
