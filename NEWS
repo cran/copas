@@ -1,3 +1,17 @@
+2012-03-20, version 0.6-5
+
+Function copas:
+ - modified so that call of function metabias from R package meta
+   considers the new parameter k.min
+
+
+2010-10-01, version 0.6-4
+
+Function copas:
+ - modified so that an error in calculating the test of
+   residual selection bias does not stop the execution of
+   the function
+
 
 2009-11-25, version 0.6-3
 
