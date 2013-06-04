@@ -1,3 +1,29 @@
+2013-06-04, version 0.7-0
+
+Functions copas and summary.copas:
+ - new list elements:
+   - title (Title of meta-analysis / Cochrane review)
+   - complab (Comparison label)
+   - outclab (Outcome label)
+   - version (version number of R package copas)
+
+Function print.copas:
+ - new argument digits
+ - information on meta-analysis printed if provided by object from
+   R package meta (i.e. list elements title, complab, outclab)
+
+Function print.summary.copas:
+ - new argument header
+ - information on meta-analysis printed if provided by object from
+   R package meta (i.e. list elements title, complab, outclab)
+
+New functions:
+ - crtitle   (function used internally)
+ - .onAttach (function used internally)
+
+Minor changes to help pages.
+
+
 2012-03-20, version 0.6-5
 
 Function copas:
@@ -20,7 +46,7 @@ Functions plot.copas, print.copas, print.summary.copas,
  - modified so that the signifiance level for the test of
    residual selection bias can be chosen by the user
    (new argument sign.rsb)
- - help files changed accordingly
+ - help pages changed accordingly
 
 
 2009-04-08, version 0.6-2
